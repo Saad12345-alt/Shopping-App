@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+.body {
+  display: flex;
+  flex-direction: column; /* NavBar on top, product card below */
+  align-items: center;
+  justify-content: center;;
+  width: 100%;
+  min-height: calc(100vh- 15%); /* Use min-height for better mobile support */
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-family: "Libertinus Sans", sans-serif;
+
+  font-weight: 700;
+  font-style: normal;
+}
+
+.body .productcard {
+  display: flex;
+  flex-direction: row; /* side-by-side layout */
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff4f4;
+  border-radius: 10px;
+}
+
+.body .productcard > div {
+  flex: 1; /* 50% each */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.body .productcard img {
+  width: 100%; /* image fills its half */
+  height: 100%;
+ object-fit: cover;
+}
+
+/* Stack vertically on small screens */
+@media (max-width: 600px) {
+  .body .productcard {
+    flex-direction: column;
+  }
+}
+
+.body .productcard .productdetails
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: -10px;
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  background-color: #004085;
+  transform: translateY(0);
+  box-shadow: none;
+}

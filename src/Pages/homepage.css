@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%; /* fill viewport */
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f4f4f4; /* page background */
+  color: #333;
+}
+
+.body
+{
+  margin-top:10%;
+}
+
+
+@media (max-width: 768px) {
+  .body {
+    margin-top: 10%;
+  }
+}
+@media (max-width: 430px) {
+  .body {
+    margin-top: 20%;
+  }
+}
+
+.idbox
+{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: start;
+    height: auto;
+    width: 100%;
+}
+
+.AboutContainer {
+  height: auto;
+  width: auto;
+  margin: 0 auto 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #F7F7FF;
+  box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.About {
+  color: rgb(61, 59, 107);
+  margin: 1.5rem 0 0.5rem 0;
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-family: "Libertinus Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.AboutP {
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: #222;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.ProductText {
+  color: black;
+  margin: 1.5rem 0 0.75rem 0;
+  text-align: center;
+  margin-bottom: 5%;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-family: "Libertinus Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.FilterBar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  flex-wrap: wrap; /* makes it stack on small screens */
+}
+
+.FilterBar div input {
+  flex: 1; /* take available space */
+  min-width: 200px; /* don't shrink too much */
+  max-width: 500px; /* optional, prevent too wide */
+  height: 2.5rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+.FilterBar div input:focus {
+  border-color: rgb(161, 169, 74);
+  outline: none;
+}
+
+
+
+.FilterBar select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  flex: 1.5;
+}
+
+.FilterBar select:focus {
+  border-color: #6c63ff; /* highlight color */
+  outline: none;
+}
+
+.productlist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row on PC */
+  gap: 1.5rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  min-width: 100%;
+  margin: 0 auto; /* center */
+  background-color: #484949;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .productlist {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .productlist {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}

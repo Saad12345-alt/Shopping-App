@@ -1,10 +1,14 @@
-import {createContext, useContext, useState} from 'react'
+import {createContext, useContext, useState,useEffect} from 'react'
 
 const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
     const [cartItems, setCartItems] = useState([]);
     
+    useEffect(() =>
+    {
+      localStorage.setItem('cartItems', JSON.stringifly(cartIt))
+    })
 const addToCart = (item) => {
   setCartItems((prevItems) => {
     const existingItem = prevItems.find((i) => i.id === item.id);

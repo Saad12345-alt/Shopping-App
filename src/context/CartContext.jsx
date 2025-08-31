@@ -3,12 +3,16 @@ import {createContext, useContext, useState,useEffect} from 'react'
 const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(() => 
+    {
+      const saved = localStorage.getItem('cartItems');
+      return saved ? JSON.parse(saved) : [];
+    })
     
     useEffect(() =>
     {
-      localStorage.setItem('cartItems', JSON.stringifly(cartIt))
-    })
+      localStorage.setItem('cartItems', JSON.stringifly(cartItems))
+    },[cartItems])
 const addToCart = (item) => {
   setCartItems((prevItems) => {
     const existingItem = prevItems.find((i) => i.id === item.id);

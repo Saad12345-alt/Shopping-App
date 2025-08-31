@@ -7,12 +7,12 @@ import { useDebounce} from '../hooks/useDebounce.js'
  const HomePage = () => {
   const [searchterm, setSearchTerm] = useState("");
   const [sortorder, setSortOrder] = useState("all");
-  const debouncesearchterm = useDebounce(searchterm, 500);
+  const debouncesearchterm = useDebounce(searchterm, 200);
   useEffect(() =>
   {
     if(!debouncesearchterm) return;
   })
-  
+
   return (
     <div className='body'>
         <NavBar/>
@@ -47,7 +47,7 @@ import { useDebounce} from '../hooks/useDebounce.js'
         </div>
         
         <div className='productlist' id ='productlist'>
-            <ProductList searchterm = {searchterm} sortorder = {sortorder}/>
+            <ProductList searchterm = {debouncesearchterm} sortorder = {sortorder}/>
         </div>
     </div>
   )

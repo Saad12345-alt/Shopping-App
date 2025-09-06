@@ -2,9 +2,12 @@ import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link';
 import './NavBar.css'
+import {useCart} from '../context/CartContext'
 
  const NavBar = () => {
   const [menu, setMenu] = useState(false);
+  const {cartItems} = useCart();
+
     useEffect(() => {
     const handleScroll = () => {
       const navbar = document.querySelector('.navbar');
@@ -31,6 +34,7 @@ import './NavBar.css'
     <p className='menuitems'><HashLink smooth to='/#productlist'>Products</HashLink></p>
     <p>
       <Link to = '/Cart'><img className='menuitems' src="/images/cart.svg" alt="Cart"/></Link>
+      <sub className='cartitems'>{cartItems.length}</sub>
     </p>
   </div>
 <p className='hamburger' onClick={() => setMenu(!menu)}>&#9783;</p>
@@ -56,6 +60,7 @@ import './NavBar.css'
         </p>
       <p onClick={() => setMenu(false)}>
         <Link to='/Cart'><img src="/images/cart.svg" alt="Cart" className="cart-icon" /></Link>
+        <sub className='cartitems'>{cartItems.length}</sub>
         </p>
     </div>
   </div>

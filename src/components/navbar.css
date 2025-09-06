@@ -36,7 +36,7 @@ box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 78%;
 }
 
 .navbar .hamburger {
@@ -45,7 +45,7 @@ box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 426px) {
-  .menuitems {
+  .menuitems, #a {
     display: none;
   }
   .navbar .hamburger {
@@ -134,3 +134,13 @@ p
 }
 
 
+.cartitems {
+  font-family: "Libertinus Sans", sans-serif;
+  font-size: 14px;       /* balanced size */
+  font-weight: bold;     /* make it pop */
+  color: #e63946;        /* a strong red tone */
+  margin-left: 6px;      /* little space from icon */
+  vertical-align: baseline;
+  font-family: Arial, sans-serif; /* clean font */
+
+}

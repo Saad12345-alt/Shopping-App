@@ -34,7 +34,7 @@ import {useCart} from '../context/CartContext'
     <p className='menuitems'><HashLink smooth to='/#productlist'>Products</HashLink></p>
     <p>
       <Link to = '/Cart'><img className='menuitems' src="/images/cart.svg" alt="Cart"/></Link>
-      <sub className='cartitems'>{cartItems.length}</sub>
+      <sub className='cartitems' id= 'a'>{cartItems.length}</sub>
     </p>
   </div>
 <p className='hamburger' onClick={() => setMenu(!menu)}>&#9783;</p>
